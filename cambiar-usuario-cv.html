@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/intranet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Cambio de usuario</title>
+</head>
+<body>
+    <nav class="navegacion">
+        <div><img src="/R&Q/assets/logo-ryq.png" alt="RYQ"></div>
+        <div class="hamburguesa">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          
+         <div class="modal-menu">
+            <div class="hide" style="margin-top:200px;">
+                <div class="avatar-preview" style="background: #fff;border:none;">
+                    <div id="imagePreview" class="image-preview" ></div>
+               </div>
+             
+              <ul>
+                <a href="">
+                    <li >MI CV</li>
+                </a><a href="">
+                    <li>CAMBIAR USUARIO</li>
+                </a><a href="">
+                    <li>CAMBIAR CONTRASEÑA</li>
+                </a><a href="">
+                    <li class="cerrar">CERRAR SESION</li>
+                </a>
+              </ul>
+            </div>
+        </div>
+       
+    </nav>
+<main class="contenedor-contrasena-usuario">
+    <h3>Cambiar contraseña</h3>
+   <form action="" id="formularioUsuario">
+    <div class="estilo-contrasena-usuario">
+       <label for="email-antiguo">Usuario anterior:</label>
+        <input type="email" class="password-usuario-input" id="email-antiguo" placeholder="XXXXXXXXXXXX" >
+        
+    </div>
+    <div class="estilo-contrasena-usuario">
+        <label for="email-nuevo">Usuario nuevo:</label>
+         <input type="email" class="password-usuario-input" id="email-nuevo" placeholder="XXXXXXXXXXXX" > 
+     </div>
+
+     <div class="boton-cambiar"> 
+         <button type="submit" class="botones" disabled>Cambiar Contraseña</button> 
+    </div>
+    
+   </form>
+</main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="js/iteraciones.js"></script>
+    <script>
+        const emailAntiguo = document.querySelector('#email-antiguo');
+        const emailNuevo = document.querySelector('#email-nuevo');
+        const formularioUsuario = document.querySelector('#formularioUsuario');
+        const botonSubmit = document.querySelector('.botones');
+        botonSubmit.disabled = true;
+        botonSubmit.style.cursor = "not-allowed";
+        botonSubmit.style.opacity = "0.5";
+        const er = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        emailAntiguo.addEventListener('input',validarFormulario)
+        emailNuevo.addEventListener('input',validarFormulario)
+
+
+        function validarFormulario(e){
+
+            if(er.test(e.target.value)){
+                e.target.parentElement.classList.remove('wrong');
+                e.target.parentElement.classList.add('match');
+            }else{
+                e.target.parentElement.classList.remove('match');
+                e.target.parentElement.classList.add('wrong');
+            }
+
+            if(er.test(emailAntiguo.value) !== false && er.test(emailNuevo.value) !== false && emailAntiguo.value !== "" && emailNuevo.value !== ""){
+                botonSubmit.disabled=false;
+                botonSubmit.style.cursor = "pointer";
+                botonSubmit.style.opacity = "1";
+            }else{
+                botonSubmit.disabled = true;
+                botonSubmit.style.cursor = "not-allowed";
+                botonSubmit.style.opacity = "0.5";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

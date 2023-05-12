@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/R&Q/js/fastselect-master/dist/fastselect.css"> -->
+    <link rel="stylesheet" href="css/intranet.css">
+    <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <link rel="stylesheet" href="js/selectize.js-master/dist/css/selectize.css">
+   
+    
+    <title>Formulario datos</title>
+</head>
+<body>
+    <nav class="navegacion">
+        <div><img src="/assets/logo-ryq.png" alt="RYQ"></div>
+        <div class="hamburguesa">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          
+         <div class="modal-menu">
+            <div class="hide">
+            
+              <ul style="margin-top:200px">
+               
+                <a href="">
+                    <li>CAMBIAR CONTRASEÑA</li>
+                </a>
+                <a href="">
+                    <li class="cerrar">CERRAR SESION</li>
+                </a>
+              </ul>
+            </div>
+        </div>
+       
+    </nav>
+    <main class="contenedor">
+        <section class="progreso">
+            <div>
+                <ul>
+                   
+                        <li class="indicador activo">Perfil</li>
+                   
+                    
+                        <li class="indicador">Académicos</li>
+                    
+                   
+                        <li class="indicador">Laboral</li>
+                   
+                  
+                        <li class="indicador">Adicional</li>
+                   
+                </ul>
+
+                <div class="progress-bar">
+                    <div class="fill"></div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <hr>
+        <div class="modal modal-uno">
+            <!-- <a href="" class="cerrar-ventana-modal">X</a> -->
+            <div class="modal-mensaje">
+                
+                    <div class="success-animation">
+                        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
+                    </div>
+                    
+                    <div class="texto-modal">
+                        <h3>¡Felicitaciones!</h3>
+                        <p>Ya completaste el 70% de tu CV continúa cargando tu información para un mejor desempeño</p>
+                    </div>
+                  
+                        <a class="botones continuar-modal">CONTINUAR EDITANDO</a>
+                    
+            </div>
+
+        </div>
+
+        <div class="modal modal-dos">
+            <!-- <a href="" class="cerrar-ventana-modal">X</a> -->
+            <div class="modal-mensaje">
+                
+                    <div class="success-animation">
+                        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
+                    </div>
+                    
+                    <div class="texto-modal">
+                        <h3>¡Tu CV ha sido enviado exitosamnete!</h3>
+                        <p>Muchas gracias por tu interés en querer ser parte de R&Q, nuestro equipo de Recursos Humanos te contactará a la brevedad.</p>
+                    </div>
+                  
+                        <a class="botones continuar-modal ver-cv">VER MI CV</a>
+                    
+            </div>
+
+        </div>
+
+        <section class="seccion-principal">
+            
+            <form action="" method="POST" class="formulario-ingreso" id="formulario-informacion">
+
+
+                <!--Primera parte del formulario-->
+                <div class="steps show">
+                    <h1 class="titulo-principal-interior-form">ANTECEDENTES <strong>PERSONALES</strong></h1>
+                    <div style="margin-top:50px">
+                        <label for="nombres">Nombres<span class="importante">*</span></label>
+                        <input type="text" id="nombres" name="nombres"  placeholder="Escribe tu primer y segundo nombre"/>
+                    </div>
+
+                    <div>
+                        <label for="apellidos">Apellido paterno<span class="importante">*</span></label>
+                        <input type="text" id="apellido-paterno" name="apellido-paterno" placeholder="Escribe tu apellido paterno"/>
+                    </div>
+
+                    <div>
+                        <label for="rut">Apellido materno<span class="importante">*</span></label>
+                        <input type="text" id="apellido-materno" name="apellido-materno" class="rut" placeholder="Escribe tu apellido materno"/>
+                    </div>
+
+                    <div class="checkboxes">
+                        <Label>Genero<span class="importante">*</span></Label>
+                        
+                        <div>
+                            <input type="radio" name="genero" value="mujer" id="mujer" checked/>
+                            <label for="mujer">Mujer</label>
+                        
+                            <input type="radio" name="genero" value="hombre" id="hombre"/>
+                            <label for="hombre">Hombre</label>
+                      
+                            <input type="radio" name="genero" value="no-informa" id="no-informa"/>
+                            <label for="no-informa">Prefiero no informar</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="fecha">Fecha de nacimiento<span class="importante">*</span></label>
+                        <input type="date" id="fecha-de-nacimiento" name="fecha-de-nacimiento" placeholder="dd-mm-aa"/>
+                    </div>
+                    
+                    <div >
+                        <label for="nacionalidad">Nacionalidad<span class="importante">*</span></label>
+                        <select name="nacionalidad" id="nacionalidad">
+                            <option value="Chi" selected>Chilena</option>
+                            <option value="Col">Colombiana</option>
+                            <option value="Per">Peruana</option>
+                            <option value="Mex">Mexicana</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="residencia">Pais de residencia<span class="importante">*</span></label>
+                        <input type="text" id="residencia" placeholder="Ej: Chile">
+                    </div>
+
+                    <div>
+                        <label for="direccion">Dirección<span class="importante">*</span></label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Escriba su dirección"/>
+                    </div>
+
+                <div class="comuna-region">
+                    <div>
+                        <label for="region">Región<span class="importante">*</span></label>
+                        <select name="region" id="region">
+                            <option value="" selected disabled>Selecciona una región</option>
+                            <option value="region-metropolitana" >Region metropolitana</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="comuna">Comuna<span class="importante">*</span></label>
+                        <select name="comuna" id="comuna">
+                            <option value="" selected disabled>Selecciona una comuna</option>
+                            <option value="santiago" >Santiago</option>
+                        </select>
+                    </div>
+                </div>
+
+                
+
+                    <div class="input-telefono">
+                        <label for="comuna">Teléfono<span class="importante">*</span></label>
+                       <!--  <input type="tel" id="telefono" placeholder=" Ingresa tu numero de telefono"> -->
+                        <input id="phone" type="tel" name="phone" />
+                        <div class="alert alert-info" style="display: none;"></div>
+                        
+                    </div>
+
+                    <div>
+                       
+                        <label for="cargo-postula">Cargo al que postula<span class="importante">*</span></label>
+                        <select class="multipleSelect" multiple name="language" placeholder="Selecciona una oferta">
+                            <option value="Bangladesh">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, minima!</option>
+                            <option value="Bangladesh16">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, minima!</option>
+                            <option value="Bangladesh15">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, minima!</option>
+                            <option value="Bangladesh14">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, minima!</option>
+                            <option value="Bangladesh13">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, minima!</option>
+                            <option value="Bangladesh12">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, minima!</option>
+                        </select>
+    
+                    </div>
+                    
+                       
+                    <div class="mid-boton" id="mid-boton-uno">
+                        <a  class="botones continuar1">CONTINUAR</a>
+                    </div>
+                </div>
+            <!--Fin primera parte-->
+
+            <!--comienzo segunda parte formulario-->
+                <div class="steps">
+                <h1 class="titulo-principal-interior-form">ANTECEDENTES <strong>ACADEMICOS</strong></h1>
+                <div style="margin-top:50px">
+                    <a href="" class="agregar" id="agregar-antecedentes">Agregar antecedentes academicos</a>
+                    <span class="informativo">Puedes agregar hasta 3 antecedentes</span>
+                </div>
+            
+
+            <div>
+                <label for="nivel-maximo-estudios">Nivel máximo de estudios</label>
+                <select name="nivel-maximo-estudios" id="nivel-maximo-estudios">
+                    <option value="" selected disabled>Selecciona nivel</option>
+                    <option value="basica">Básica</option>
+                    <option value="media">Media</option>
+                    <option value="tecnico">Técnico</option>
+                    <option value="universitario">Universitario</option>
+                    <option value="postgrado">Postgrado</option>
+                    
+
+                </select>
+
+            </div>
+
+            <div>
+                <label for="ensenanza-secundaria">Enseñanza secundaria</label>
+                <input type="text" name="ensenanza-secundaria" id="ensenanza-secundaria" placeholder="Ej: Colegio Sagrado Corazón de María">
+
+                </select>
+            </div>
+            <div class="antecedentes-1">
+            <h3 style="text-align: center;margin-top:30px;">Estudios superiores</h3>
+            
+            <div>
+                <label for="institucion">Institución</label>
+                <input type="text" id="institucion" placeholder="Ej: Pontificia Universidad Católica de Chile">
+            </div>
+
+            <div>
+                <label for="carrera">Carrera</label>
+                <input type="text" id="carrera" placeholder="Ej: Administración Gastronómica">
+            </div>
+
+            <div>
+                <label for="situacion-academica">Situación académica actual</label>
+                <select name="situacion-academica" id="situacion-academica">
+                    <option value=""selected disabled>Selecciona tu situación académica</option>
+                    <option value="en curso">En curso</option>
+                    <option value="egresado">Egresado</option>
+                    <option value="titulado">Títulado</option>
+                    <option value="congelado">Congelado</option>
+                </select>
+            </div>
+
+            
+            <div style="justify-content: space-between;">
+                <label for="fecha-inicio">Fecha de inicio</label><br>
+
+                <select name="anio-inicio" id="anio-inicio" style="width: 49%;">
+                    <option value="" selected disabled>Año inicio</option>
+                </select>
+
+                <select name="mes-inicio" id="mes-inicio" style="width: 49%;">
+                    <option value="" selected disabled>Mes inicio</option>
+                    <option value="01">Enero</option>
+                    <option value="02">Febrero</option>
+                    <option value="03">Marzo</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Mayo</option>
+                    <option value="06">Junio</option>
+                    <option value="07">Julio</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+
+            </div>
+
+            <div style="justify-content: space-between;">
+                <label for="fecha-fin">Fecha término</label><br>
+
+                <select name="anio-fin" id="anio-fin" style="width: 49%;" disabled>
+                    
+                </select>
+
+                <select name="mes-fin" id="mes-fin" style="width: 49%;" disabled>
+                    <option value="01">Enero</option>
+                    <option value="02">Febrero</option>
+                    <option value="03">Marzo</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Mayo</option>
+                    <option value="06">Junio</option>
+                    <option value="07">Julio</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            </div>
+            </div>
+            <div class="mid-boton">
+                <a  class="botones-atras atras1">ANTERIOR</a>
+                <a  class="botones continuar2">CONTINUAR</a>
+            </div>
+
+                </div>
+            <!--fin segunda parte-->
+
+            <!--Inicio tercera parte del formulario-->
+                <div class="steps" >
+                <h1 class="titulo-principal-interior-form">EXPERIENCIA <strong>LABORAL</strong></h1>
+                <div style="margin-top:50px">
+                    <a href="" class="agregar" id="agregar-experiencia">Agregar experiencia</a>
+                    <span class="informativo">Puedes agregar hasta 3 experiencias</span>
+                </div>
+            
+
+                <div>
+                    <label for="situacion-laboral">Situación laboral</label>
+                    <select id="situacion-laboral">
+                        <option value="" selected disabled>Selecciona una situación</option>
+                        <option value="indefinido">Contrato indefinido</option>
+                        <option value="plazo fijo">Contrato plazo fijo</option>
+                        <option value="por obra">Contrato por obra o faena</option>
+                        <option value="part-time">Contrato part time</option>
+                        <option value="vinculo laboral">Contrato según vinculo laboral</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="anios-experiencia">Años de experiencia</label>
+                    <select id="anios-experiencia">
+                        <option value="" selected disabled>Selecciona rango de experiencia</option>
+                        <option value="sin experiencia">Sin Experiencia</option>
+                        <option value="0 a 1 años">0 a 1 año</option>
+                        <option value="1 a 3 años">1 a 3 años</option>
+                        <option value="3 a 5 años">3 a 5 años</option>
+                        <option value="5 a 10 años">5 a 10 años</option>
+                        <option value="">Más de 10 años</option>
+                    </select>
+                </div>
+                <div class="experiencia-1">
+                    <h3 style="text-align: center;margin-top:30px;">Experiencia</h3>
+
+                <div>
+                    <label for="cargo">Cargo</label>
+                    <input type="text" id="cargo" placeholder="Nombre del cargo">
+                </div>
+
+                <div>
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" placeholder="Nombre de la empresa">
+                </div>
+
+                <div>
+                    <label for="actividad-empresa">Actividad de la empresa</label>
+                    <select id="actividad-empresa">
+                        <option value="" selected disabled>Selecciona actividad</option>
+                        <option value="Agricultura, Ganadería, Silvicultura y Pesca">Agricultura, Ganadería, Silvicultura y Pesca</option>
+                        <option value="Explotación de Minas y Canteras">Explotación de Minas y Canteras </option>
+                        <option value="Industrias Manufacturera">Industrias Manufacturera</option>
+                        <option value="Suministro de Electricidad, Gas, Vapor y Aire Acondicionado ">Suministro de Electricidad, Gas, Vapor y Aire Acondicionado </option>
+                        <option value="Suministro de Agua, Evacuación de Agua residuales, gestión de desechos y descontaminación">Suministro de Agua, Evacuación de Agua residuales, gestión de desechos y descontaminación </option>
+                        <option value="Construcción">Construcción</option>
+                        <option value="Comercio al Por Mayor y al por Menor, Reparación de Vehículos Automotores y Motocicletas">Comercio al Por Mayor y al por Menor, Reparación de Vehículos Automotores y Motocicletas</option>
+                        <option value="Transporte y Almacenamiento">Transporte y Almacenamiento</option>
+                        <option value="Actividades de Alojamiento y de Servicio de Comidas">Actividades de Alojamiento y de Servicio de Comidas </option>
+                        <option value="Información y Comunicaciones">Información y Comunicaciones</option>
+                        <option value="Actividades Financieras y de Seguros ">Actividades Financieras y de Seguros </option>
+                        <option value="Actividades inmobiliarias">Actividades inmobiliarias</option>
+                        <option value="Actividades Profesionales, Cientificas y Técnicas">Actividades Profesionales, Cientificas y Técnicas </option>
+                        <option value="Actividades de Servicios Administrativos y de Apoyo">Actividades de Servicios Administrativos y de Apoyo </option>
+                        <option value="Adm. Pública y Defensa; Planes de Seguridad Social de Afiliación Obligatoria">Adm. Pública y Defensa; Planes de Seguridad Social de Afiliación Obligatoria</option>
+                        <option value="Enseñanza">Enseñanza</option>
+                        <option value="Actividades de Atención de la Salud Humana y de Asistencia Social">Actividades de Atención de la Salud Humana y de Asistencia Social</option>
+                        <option value="Actividades Artísticas, de Entretenimiento y Recreativas">Actividades Artísticas, de Entretenimiento y Recreativas</option>
+                        <option value="Otras Actividades de Servicios">Otras Actividades de Servicios</option>
+                        <option value="Actividades de los Hogares como Empleadores; Actividades No Diferenciadas de los Hogares">Actividades de los Hogares como Empleadores; Actividades No Diferenciadas de los Hogares</option>
+                        <option value="Actividades de Organizaciones y Órganos Extraterritoriales">Actividades de Organizaciones y Órganos Extraterritoriales </option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="personal-a-cargo">Personal a cargo</label>
+                    <select id="personal-a-cargo">
+                        <option value="" selected disabled>Selecciona personas a cargo</option>
+                        <option value="1 a 5 personas">1 a 5 personas</option>
+                        <option value="6 a 10 personas">6 a 10 personas</option>
+                        <option value="mas de 10 personas">Más de 10 personas</option>
+                        <option value="ninguno">Ninguno</option>
+                    </select>
+                </div>
+
+                <div id="contenedor-sueldo">
+                    <label for="sueldo">Sueldo</label>
+                    <select id="sueldo">
+                        <option value="" selected disabled>Selecciona sueldo</option>
+                        <option value="$500.000 a $1.000.000">$500.000 a $1.000.000</option>
+                        <option value="$1.000.000 a $2.000.000">$1.000.000 a $2.000.000</option>
+                        <option value="$2.000.000 a $3.000.000">$2.000.000 a $3.000.000</option>
+                        <option value="$3.000.000 a $4.000.000">$3.000.000 a $4.000.000</option>
+                        <option value="$4.000.000 a $5.000.000">$4.000.000 a $5.000.000</option>
+                        <option value="más de $5.000.0000">más de $5.000.0000</option>
+                    </select>
+                </div>
+
+                <div style="justify-content: space-between;">
+                    <label for="fecha-inicio-experiencia">Fecha de inicio</label><br>
+    
+                    <select name="anio-inicio" id="anio-inicio-experiencia" style="width: 49%;">
+                        
+                    </select>
+    
+                    <select name="mes-inicio" id="mes-inicio-experiencia" style="width: 49%;">
+                        <option value="01">Enero</option>
+                        <option value="02">Febrero</option>
+                        <option value="03">Marzo</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Mayo</option>
+                        <option value="06">Junio</option>
+                        <option value="07">Julio</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+    
+                </div>
+    
+                <div style="justify-content: space-between;">
+                    <label for="fecha-fin-experiencia">Fecha término</label><br>
+    
+                    <select name="anio-fin" id="anio-fin-experiencia" style="width: 49%;">
+                        
+                    </select>
+    
+                    <select name="mes-fin" id="mes-fin-experiencia" style="width: 49%;">
+                        <option value="01">Enero</option>
+                        <option value="02">Febrero</option>
+                        <option value="03">Marzo</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Mayo</option>
+                        <option value="06">Junio</option>
+                        <option value="07">Julio</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="resposabilidad-logros" style="margin-bottom: 5px; display: block;">Responsabilidad y logros</label>
+                    <textarea name="textarea" rows="5" placeholder="Escribir responsabilidades y logros" style="width: 100%; padding: 10px;" id="responsabilidad-logros"></textarea>
+                    <span class="informativo">Cantidad máxima de caracteres permitidos 2000</span>
+                </div>
+            </div>
+           
+
+               
+
+
+
+
+            <div class="mid-boton">
+                <a  class="botones-atras atras2">ANTERIOR</a>
+                <a  class="botones continuar3">CONTINUAR</a>
+            </div>
+
+                <!--  <div class="checkboxes" style="display:flex;">
+                            
+                    <input type="checkbox" name="mostrar-empresa" id="mostrar-empresa"/>
+                    <label for="mostrar-empresa">Mostrar empresa
+                    </label>
+
+                </div> -->
+
+                </div>
+        <!--fin tercera parte-->
+
+        <div class="steps">
+            <h1 class="titulo-principal-interior-form">INFORMACIÓN <strong>ADICIONAL</strong></h1>
+          
+            <div>
+                <label for="licencia-de-conducir">Licencia de conducir <span class="importante">*</span></label>
+          
+               <div>
+                    <input type="radio" name="licencia" value="si" id="licencia-si" checked onclick="validarLicencia()"/>
+                    <label for="licencia-si">Si</label>
+                
+                    <input type="radio" name="licencia" value="no" id="licencia-no" onclick="validarLicencia()"/>
+                    <label for="licencia-no">No</label>
+            </div> 
+
+            <div>
+                <label for="tipo-licencia">Tipo de licencia</label>
+                <select id="tipo-licencia">
+                    <option value="" selected disabled>Selecciona tipo de licencia</option>
+                    <option value="Clase A1">Clase A1</option>
+                    <option value="Clase A2">Clase A2</option>
+                    <option value="Clase A3">Clase A3</option>
+                    <option value="Clase A4">Clase A4</option>
+                    <option value="Clase A5">Clase A5</option>
+                    <option value="Clase B">Clase B</option>
+                    <option value="Clase C">Clase C</option>
+                    <option value="Clase D">Clase D</option>
+                    <option value="Clase E">Clase E</option>
+                    <option value="Clase F">Clase F</option>
+                    
+                </select>
+            </div>
+
+            <div class="informacion-discapacidad-box">
+                <label for="discapacidad">¿Tienes alguna discapacidad?</label><p class="informacion-discapacidad">Nuestra visión es ser la empresa líder en atracción de talentos, generando espacios innovadores de desarrollo profesional. Por ello, como política interna damos cabida a personas en situación de discapacidad. Menciona si requieres alguna necesidad especial para formar parte de nuestro equipo.</p><img src="/R&Q/assets/information-sign.svg" alt="info" style="max-width: 15px;">
+                
+                <div class="informacion-discapacidad-boton">
+                <input type="radio" name="discapacidad" value="si" id="discapacidad-si" onclick="validarDiscapacidad();"/>
+                <label for="originarios-si">Si</label>
+            
+                <input type="radio" name="discapacidad" value="no" id="discapacidad-no" onclick="validarDiscapacidad();"/>
+                <label for="originarios-no">No</label>
+
+                </div>
+            </div>
+
+            <div>
+                <label for="tipo-discapacidad">Tipo de discapacidad</label>
+                <select id="tipo-discapacidad">
+                    <option value="" selected disabled>Selecciona una discapacidad</option>
+                    <option value="Fisica o Motora">Fisica o Motora</option>
+                    <option value="Sensorial Auditiva">Sensorial Auditiva</option>
+                    <option value="Sensorial Visual">Sensorial Visual</option>
+                    <option value="Cognitiva o Intelectual">Cognitiva o Intelectual</option>
+                    <option value="Psíquica o Psiquiatrica">Psíquica o Psiquiatrica</option>
+                </select>
+            </div>
+
+            <h3 style="text-align: center;margin-top:30px;">ETNIA</h3>
+
+            <div>
+                <label for="">¿Pertenece a algún pueblo originario?<span class="importante">*</span></label>
+          
+               <div>
+                    <input type="radio" name="originarios" value="si" id="originarios-si" onclick="validarPueblos();"/>
+                    <label for="originarios-si">Si</label>
+                
+                    <input type="radio" name="originarios" value="no" id="originarios-no" onclick="validarPueblos();"/>
+                    <label for="originarios-no">No</label>
+            </div> 
+            
+            <div>
+                <label for="pueblos-originarios">Pueblos originarios</label>
+                <select id="pueblos-originarios">
+                    <option value="" selected disabled>Selecciona si pertenecces a un pueblo originario</option>
+                    <option value="no informa">Prefiero no informar</option>
+                    <option value="picunches">Picunches</option>
+                    <option value="mapuches">Mapuches</option>
+                    <option value="huilliches">Huilliches</option>
+                    <option value="rapanui">Rapanui</option>
+                    <option value="diaguitas">Diaguitas</option>
+                    <option value="atacameños">Atacameños</option>
+                    <option value="caucauhes">Caucahués</option>
+                    <option value="changos">Changos</option>
+                    <option value="cuncos">Cuncos</option>
+                    <option value="kawesqar">Kawésqar</option>
+                    <option value="yaganes">Yaganes</option>
+                    <option value="aonikenk">Aonikenk</option>
+                    <option value="selknam">Selknam</option>
+                </select>
+            </div>
+
+            <h3 style="text-align: center;margin-top:30px;">Curriculum</h3>
+            <div>
+                <label for="curriculum" style="display:block">Sube tu curriculum <span class="importante">*</span></label>
+                
+                <input type="file" name="file" id="curriculum" style="border:none;" >
+                
+                <span class="informativo" style="display: block;">Carga tu CV en pdf o Word</span>
+            </div>
+
+
+        <div class="mid-boton">
+            <a  class="botones-atras atras3">ANTERIOR</a>
+            <button type="submit" class="botones" id="boton-submit">GUARDAR</button>
+        </div>
+
+  
+        
+     </div>
+                
+           </form>
+        </section>
+
+       
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+   <!--  <script src="/R&Q/js/fastselect-master/dist/fastselect.standalone.js"></script>
+    <script> $('.multipleSelect').fastselect();</script> -->
+    <script  src="js/selectize.js-master/dist/js/standalone/selectize.js"></script>
+    <script >
+     $(function () {
+              $(".multipleSelect").selectize({
+                plugins: ["remove_button"],
+                 maxItems: 3,
+                });
+            });
+    </script>
+    <script src="/js/validaciones.js"></script>
+    <script src="/js/iteraciones.js"></script>
+    
+   
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/intranet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>intranet R&Q</title>
+</head>
+<body class="body-background">
+    <nav class="navegacion">
+        <div><img src="/R&Q/assets/logo-ryq.png" alt="RYQ"></div>
+    </nav>
+    <main class="contenedor">
+        
+        <section class="titulo-texto">
+            <h1 class="titulo-principal">INGRESO DE CUENTA</h1>
+            <p>R&Q es una de las empresas de ingeniería más grandes de Latinoamérica y trabaja permanentemente para potenciar talentos y capacidades.
+            </p>
+            <p>¡Súmate a nuestro equipo cargando tu CV digital en el portal de empleo R&Q !</p>
+
+           
+            <form action="" method="POST" class="formulario-ingreso" id="formulario-ingreso">
+                    <div>
+                        <input type="text" name="correo" id="correo" class="correo" placeholder="Correo Electronico"/>
+                    </div>
+                    
+                    <div style="position: relative;">
+                        <input type="password" id="password" name="password" class="password" placeholder="Contraseña"/>
+                        <span class="mostrar-ocultar">Mostrar</span>
+                    </div>
+
+                    <div class="recordar-olvidar">
+                        <div>
+                        <input type="checkbox" id="recordar-contrasena"><label for="recordar-contrasena">Recordar mi contraseña</label>
+                        </div>
+                        <a href="" class="olvide-contrasena">Olvide mi contraseña</a>
+                    </div>
+
+                    <div class="inciar-registrar">
+                        <button id="boton-iniciar" class="botones" type="submit">INICIA SESIÓN</button>
+
+                        <a href="" class="botones-link">REGISTRATE</a>
+                    </div>
+            </form>
+
+            
+        </section>
+        <div class="error-validacion"><p>La dirección de correo electrónico o contraseña son incorrectos</p></div>
+    </main>
+
+    <script src="/R&Q/js/login-validaciones.js"></script>
+</body>
+</html>

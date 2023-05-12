@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/intranet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Cambio de contraseña</title>
+</head>
+<body>
+    <nav class="navegacion">
+        <div><img src="/R&Q/assets/logo-ryq.png" alt="RYQ"></div>
+        <div class="hamburguesa">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          
+         <div class="modal-menu">
+            <div class="hide" style="margin-top:200px;">
+                <div class="avatar-preview" style="background: #fff;border:none;">
+                    <div id="imagePreview" class="image-preview" ></div>
+               </div>
+             <!-- <div class="imagen-perfil">
+                <img src="/R&Q/assets/prueba.jpg" alt="">
+                <p>Victor Montiel</p>
+             </div> -->
+              <ul>
+                <a href="">
+                    <li >MI CV</li>
+                </a><a href="">
+                    <li>CAMBIAR USUARIO</li>
+                </a><a href="">
+                    <li>CAMBIAR CONTRASEÑA</li>
+                </a><a href="">
+                    <li class="cerrar">CERRAR SESION</li>
+                </a>
+              </ul>
+            </div>
+        </div>
+       
+    </nav>
+<main class="contenedor-contrasena-usuario">
+    <h3>Cambiar contraseña</h3>
+   <form action="">
+    <div class="estilo-contrasena-usuario">
+       <label for="password-antigua">Contraseña anterior:</label>
+        <input type="password" class="password-usuario-input" id="password-antigua" placeholder="XXXXXXXXXXXX" minlength="8">
+        <i class="far fa-eye" id="togglePassword-1" style="color: #c1c1c1;"></i>
+    </div>
+    <div class="estilo-contrasena-usuario">
+        <label for="password-antigua">Contraseña nueva:</label>
+         <input type="password" class="password-usuario-input" id="password-nueva" placeholder="XXXXXXXXXXXX" minlength="8">
+         <i class="far fa-eye" id="togglePassword-2" style="color: #c1c1c1;"></i>
+     </div>
+     <div class="estilo-contrasena-usuario">
+        <label for="password-antigua">Repetir contraseña:</label>
+         <input type="password" class="password-usuario-input" id="password-repetida" placeholder="XXXXXXXXXXXX" minlength="8">
+         <i class="far fa-eye" id="togglePassword-3" style="color: #c1c1c1;"></i>
+     </div>
+     <span class="informativo">Recuerda que como mínimo debe tener 8 caracteres</span>
+
+     <div class="boton-cambiar"> 
+         <button type="submit" class="botones">Cambiar Contraseña</button> 
+    </div>
+    
+   </form>
+</main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="js/iteraciones.js"></script>
+    
+</body>
+<script>
+  const togglePassword = document.querySelector('#togglePassword-1');
+  const togglePassword2 = document.querySelector('#togglePassword-2');
+  const togglePassword3 = document.querySelector('#togglePassword-3');
+  const passwordAntigua = document.querySelector('#password-antigua');
+  const passwordNueva = document.querySelector('#password-nueva');
+  const passwordRepetida = document.querySelector('#password-repetida');
+ 
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = passwordAntigua.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordAntigua.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+
+togglePassword2.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = passwordNueva.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordNueva.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+
+togglePassword3.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = passwordRepetida.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordRepetida.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+
+passwordRepetida.addEventListener('input',()=>{
+    if(passwordNueva.value === '' && passwordRepetida.value === ''){
+       
+       passwordNueva.parentElement.classList.remove('match');
+       passwordRepetida.parentElement.classList.remove('match');
+       passwordNueva.parentElement.classList.add('wrong');
+       passwordRepetida.parentElement.classList.add('wrong');
+
+
+    }else if(passwordNueva.value === passwordRepetida.value || passwordRepetida.value === passwordNueva.value){
+        
+        passwordNueva.parentElement.classList.remove('wrong');
+        passwordRepetida.parentElement.classList.remove('wrong');
+        passwordNueva.parentElement.classList.add('match');
+        passwordRepetida.parentElement.classList.add('match');
+    }else{
+        
+        passwordNueva.parentElement.classList.remove('match');
+        passwordRepetida.parentElement.classList.remove('match');
+        passwordNueva.parentElement.classList.add('wrong');
+        passwordRepetida.parentElement.classList.add('wrong');  
+    }
+});
+
+passwordNueva.addEventListener('input',()=>{
+    if(passwordNueva.value === '' && passwordRepetida.value === ''){
+       
+        passwordNueva.parentElement.classList.remove('match');
+        passwordRepetida.parentElement.classList.remove('match');
+        passwordNueva.parentElement.classList.add('wrong');
+        passwordRepetida.parentElement.classList.add('wrong');
+
+    }else if(passwordNueva.value === passwordRepetida.value || passwordRepetida.value === passwordNueva.value){
+        passwordNueva.parentElement.classList.remove('wrong');
+        passwordRepetida.parentElement.classList.remove('wrong');
+        passwordNueva.parentElement.classList.add('match');
+        passwordRepetida.parentElement.classList.add('match');
+
+    } else{
+        passwordNueva.parentElement.classList.remove('match');
+        passwordRepetida.parentElement.classList.remove('match');
+        passwordNueva.parentElement.classList.add('wrong');
+        passwordRepetida.parentElement.classList.add('wrong');  
+    } 
+})
+
+</script>
+</html>
